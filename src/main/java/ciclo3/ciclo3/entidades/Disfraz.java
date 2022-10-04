@@ -1,4 +1,4 @@
-package ciclo3.ciclo3.modelo;
+package ciclo3.ciclo3.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
