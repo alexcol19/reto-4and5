@@ -1,4 +1,4 @@
-package ciclo3.ciclo3.modelo;
+package ciclo3.ciclo3.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,11 +13,28 @@ public class Disfraz implements Serializable {
     private Integer ID;
     private String BRAND;
     private Integer MODEL;
-    private Integer CATEGORY_ID;
+    private Integer YEAR;
     private String NAME;
+    private String DESCRIPTION;
 
     public Integer getID() {
         return ID;
+    }
+
+    public Integer getYEAR() {
+        return YEAR;
+    }
+
+    public void setYEAR(Integer YEAR) {
+        this.YEAR = YEAR;
+    }
+
+    public String getDESCRIPTION() {
+        return DESCRIPTION;
+    }
+
+    public void setDESCRIPTION(String DESCRIPTION) {
+        this.DESCRIPTION = DESCRIPTION;
     }
 
     public void setID(Integer ID) {
@@ -38,14 +55,6 @@ public class Disfraz implements Serializable {
 
     public void setMODEL(Integer MODEL) {
         this.MODEL = MODEL;
-    }
-
-    public Integer getCATEGORY_ID() {
-        return CATEGORY_ID;
-    }
-
-    public void setCATEGORY_ID(Integer CATEGORY_ID) {
-        this.CATEGORY_ID = CATEGORY_ID;
     }
 
     public String getNAME() {
