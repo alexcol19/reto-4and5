@@ -1,4 +1,4 @@
-package ciclo3.ciclo3.entidades;
+package ciclo3.ciclo3.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,17 +7,12 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "disfraz")
-public class Disfraz implements Serializable {
+public class Costume implements Serializable {
 
     @Id
-<<<<<<< HEAD
-    private Integer id;
-
-
-=======
     private Integer ID;
     private String BRAND;
-    private Integer MODEL;
+    private Integer CATEGORY;
     private Integer YEAR;
     private String NAME;
     private String DESCRIPTION;
@@ -54,14 +49,6 @@ public class Disfraz implements Serializable {
         this.BRAND = BRAND;
     }
 
-    public Integer getMODEL() {
-        return MODEL;
-    }
-
-    public void setMODEL(Integer MODEL) {
-        this.MODEL = MODEL;
-    }
-
     public String getNAME() {
         return NAME;
     }
@@ -69,5 +56,12 @@ public class Disfraz implements Serializable {
     public void setNAME(String NAME) {
         this.NAME = NAME;
     }
->>>>>>> a6ccb1425d9c1cced662a1c270ab2f7d2648e755
+
+    public Integer getCATEGORY() {
+        return CATEGORY;
+    }
+
+    public void setCATEGORY(Integer CATEGORY) {
+        this.CATEGORY = CATEGORY;
+    }
 }
