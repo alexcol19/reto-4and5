@@ -16,19 +16,19 @@ public class ReservationsService {
     @Autowired
     private ReservationRepository reservationRepository;
 
-    public List<Reservations> getReservaciones(){
-        return reservationRepository.getReservaciones();
+    public List<Reservations> getReservations(){
+        return reservationRepository.getReservations();
     }
-    public Optional<Reservations> getReservacionId(int id){
-       return reservationRepository.getReservacionId(id);
+    public Optional<Reservations> getReservationId(int id){
+       return reservationRepository.getReservationId(id);
     }
-    public Reservations guardarReservacion(Reservations reservation){
+    public Reservations saveReservation(Reservations reservation){
         if(reservation.getIdReservation()==null){
-            return reservationRepository.guardarReservacion(reservation);
+            return reservationRepository.saveReservation(reservation);
         }else{
-            Optional<Reservations> paux= reservationRepository.getReservacionId(reservation.getIdReservation());
+            Optional<Reservations> paux= reservationRepository.getReservationId(reservation.getIdReservation());
             if(paux.isEmpty()){
-                return reservationRepository.guardarReservacion(reservation);
+                return reservationRepository.saveReservation(reservation);
             }else
                 return reservation;
         }

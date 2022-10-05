@@ -18,18 +18,18 @@ public class CostumeController {
     private CostumeService costumeService;
 
     @RequestMapping("/all")
-    public List<Costume> getDisfraces(){
-        return costumeService.getDisfraces();
+    public List<Costume> getCostumes(){
+        return costumeService.getCostumes();
     }
 
     @GetMapping("/{id}")
-    public Optional<Costume> getDisfrazId(@PathVariable("id") int id){
-        return costumeService.getDisfrazId(id);
+    public Optional<Costume> getCostumeId(@PathVariable("id") int id){
+        return costumeService.getCostumeId(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Costume guardarDisfraz(@RequestBody Costume costume){
-        return costumeService.guardarDisfraz(costume);
+    public Costume saveCostuume(@RequestBody Costume costume){
+        return costumeService.saveCostume(costume);
     }
 }

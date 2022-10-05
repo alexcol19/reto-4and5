@@ -2,7 +2,7 @@ package ciclo3.ciclo3.Repository;
 
 import ciclo3.ciclo3.entities.Costume;
 import org.springframework.beans.factory.annotation.Autowired;
-import ciclo3.ciclo3.Repository.CrudRepositorio.CostumeCrudRepository;
+import ciclo3.ciclo3.Repository.CrudRepository.CostumeCrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,16 +15,16 @@ public class CostumeRepository {
     private CostumeCrudRepository costumeCrudRepository;
 
 
-    public List<Costume> getDisfraces(){
+    public List<Costume> getCostumes(){
         return (List<Costume>) costumeCrudRepository.findAll();
     }
-    public Optional<Costume> getDistrazId(int id){
+    public Optional<Costume> getCostumeId(int id){
         return costumeCrudRepository.findById(id);
     }
-    public Costume guardarDisfraz(Costume costume){
+    public Costume saveCostume(Costume costume){
         return costumeCrudRepository.save(costume);
     }
-    public void borrarDisfraz(Costume costume){
+    public void delteCostume(Costume costume){
         costumeCrudRepository.delete(costume);
     }
 

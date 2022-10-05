@@ -14,19 +14,19 @@ public class CostumeService {
     @Autowired
     private CostumeRepository costumeRepository;
 
-    public List<Costume> getDisfraces(){
-        return costumeRepository.getDisfraces();
+    public List<Costume> getCostumes(){
+        return costumeRepository.getCostumes();
     }
-    public Optional<Costume> getDisfrazId(int id){
-       return costumeRepository.getDistrazId(id);
+    public Optional<Costume> getCostumeId(int id){
+       return costumeRepository.getCostumeId(id);
     }
-    public Costume guardarDisfraz(Costume costume){
+    public Costume saveCostume(Costume costume){
         if(costume.getID()==null){
-            return costumeRepository.guardarDisfraz(costume);
+            return costumeRepository.saveCostume(costume);
         }else{
-            Optional<Costume> paux= costumeRepository.getDistrazId(costume.getID());
+            Optional<Costume> paux= costumeRepository.getCostumeId(costume.getID());
             if(paux.isEmpty()){
-                return costumeRepository.guardarDisfraz(costume);
+                return costumeRepository.saveCostume(costume);
             }else
                 return costume;
         }

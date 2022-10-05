@@ -20,18 +20,18 @@ public class ReservationController {
     private ReservationsService reservationsService;
 
     @RequestMapping("/all")
-    public List<Reservations> getReservaciones(){
-        return reservationsService.getReservaciones();
+    public List<Reservations> getReservations(){
+        return reservationsService.getReservations();
     }
 
     @GetMapping("/{id}")
-    public Optional<Reservations> getReservacionesId(@PathVariable("id") int id){
-        return reservationsService.getReservacionId(id);
+    public Optional<Reservations> getReservationsId(@PathVariable("id") int id){
+        return reservationsService.getReservationId(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Reservations guardarReservacion(@RequestBody Reservations reservation){
-        return reservationsService.guardarReservacion(reservation);
+    public Reservations saveReservation(@RequestBody Reservations reservation){
+        return reservationsService.saveReservation(reservation);
     }
 }
