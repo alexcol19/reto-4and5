@@ -1,7 +1,6 @@
 package ciclo3.ciclo3.Repository;
 
-import ciclo3.ciclo3.Repository.crudRepository.CategoryCrudRepository;
-import ciclo3.ciclo3.entidades.Category;
+import ciclo3.ciclo3.Repository.CrudRepository.CategoryCrudRepository;
 import ciclo3.ciclo3.entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 
