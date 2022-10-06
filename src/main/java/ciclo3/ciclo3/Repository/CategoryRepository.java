@@ -1,7 +1,7 @@
 package ciclo3.ciclo3.Repository;
 
 import ciclo3.ciclo3.Repository.CrudRepository.CategoryCrudRepository;
-import ciclo3.ciclo3.entities.Category;
+import ciclo3.ciclo3.entities.Library;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
