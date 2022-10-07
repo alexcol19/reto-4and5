@@ -1,13 +1,13 @@
 package ciclo3.ciclo3.entidades;
 
+import ciclo3.ciclo3.entities.Costume;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-
 @Entity
-@Table(name = "disfraz")
+@Table(name = "category")
 public class Category implements Serializable {
 
     @Id
@@ -15,9 +15,9 @@ public class Category implements Serializable {
     private Integer id;
     private String name;
 
-    //@OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    //JsonIgnoreProperties("category")
-    private List<Category> category;
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
+    @JsonIgnoreProperties("category")
+    private List<Costume> costume;
 
     public Integer getId() {
         return id;
