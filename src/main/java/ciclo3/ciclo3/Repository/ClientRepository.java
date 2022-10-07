@@ -1,7 +1,7 @@
 package ciclo3.ciclo3.Repository;
 
-import ciclo3.ciclo3.Repository.CrudRepository.AdministratorsCrudRepository;
-import ciclo3.ciclo3.entities.Administrators;
+import ciclo3.ciclo3.Repository.CrudRepository.ClientCrudRepository;
+import ciclo3.ciclo3.entities.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,18 +12,18 @@ import java.util.Optional;
 public class ClientRepository {
 
     @Autowired
-    private AdministratorsCrudRepository administratorsCrudRepository;
+    private ClientCrudRepository clientCrudRepository;
 
-    public List<Administrators> getAdministrator(){
-        return (List<Administrators>) administratorsCrudRepository.findAll();
+    public List<Client> getAll(){
+        return (List<Client>) clientCrudRepository.findAll();
     }
-    public Optional<Administrators> getAdministratorId(String id){
-        return administratorsCrudRepository.findById(id);
+    public Optional<Client> getClientId(String id){
+        return clientCrudRepository.findById(id);
     }
-    public Administrators saveAdministrator(Administrators administrators){
-        return administratorsCrudRepository.save(administrators);
+    public Client saveAdministrator(Client administrators){
+        return clientCrudRepository.save(administrators);
     }
-    public void deleteAdminstrators(Administrators administrators){
-        administratorsCrudRepository.delete(administrators);
+    public void deleteAdminstrators(Client administrators){
+        clientCrudRepository.delete(administrators);
     }
 }

@@ -14,17 +14,17 @@ public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    public List<Client> getClients(){
-        return clientRepository.getClients();
+    public List<Client> getAll(){
+        return clientRepository.getAll();
     }
-    public Optional<Client> getClientId(int id){
-       return clientRepository.getClientId(id);
+    public Optional<Client> getClient(int id){
+       return clientRepository.getClient(id);
     }
     public Client saveClient(Client client){
-        if(client.getID()==null){
-            return clientRepository.saveClient(client);
+        if(client.getIdClient()==null){
+            return clientRepository.save(p);
         }else{
-            Optional<Client> paux= clientRepository.getClientId(client.getID());
+            Optional<Client> paux= clientRepository.getClientId(client.getIdClient());
             if(paux.isEmpty()){
                 return clientRepository.saveClient(client);
             }else
