@@ -17,7 +17,7 @@ public class AdministratorsRepository {
     public List<Administrators> getAdministrator(){
         return (List<Administrators>) administratorsCrudRepository.findAll();
     }
-    public Optional<Administrators> getAdministratorId(String id){
+    public Optional<Administrators> getAdministratorId(int id){
         return administratorsCrudRepository.findById(id);
     }
     public Administrators saveAdministrator(Administrators administrators){

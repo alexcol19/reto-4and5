@@ -20,10 +20,10 @@ public class ClientRepository {
     public Optional<Client> getClientId(Integer id){
         return clientCrudRepository.findById(id);
     }
-    public Client save(Client administrators){
-        return clientCrudRepository.save(administrators);
+    public Client saveClient(Client client){
+        return clientCrudRepository.save(client);
     }
-    public void deleteAdminstrators(Client administrators){
-        clientCrudRepository.delete(administrators);
+    public void deleteClietn(Client client){
+        clientCrudRepository.delete(client);
     }
 }

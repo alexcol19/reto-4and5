@@ -24,7 +24,7 @@ public class AdministratorsController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Administrators> getAdministratorId(@PathVariable("id") String id){
+    public Optional<Administrators> getAdministratorId(@PathVariable("id") int id){
         return administratorsService.getAdministratorsId(id);
     }
 

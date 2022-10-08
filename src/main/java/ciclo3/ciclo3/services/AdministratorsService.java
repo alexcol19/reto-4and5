@@ -18,14 +18,14 @@ public class AdministratorsService {
     public List<Administrators> getAdministrators(){
         return administratorsRepository.getAdministrator();
     }
-    public Optional<Administrators> getAdministratorsId(String id){
+    public Optional<Administrators> getAdministratorsId(int id){
        return administratorsRepository.getAdministratorId(id);
     }
     public Administrators saveAdministrators(Administrators administrators){
-        if(administrators.getEmail()==null){
+        if(administrators.getIdAdmin()==null){
             return administratorsRepository.saveAdministrator(administrators);
         }else{
-            Optional<Administrators> paux= administratorsRepository.getAdministratorId(administrators.getEmail());
+            Optional<Administrators> paux= administratorsRepository.getAdministratorId(administrators.getIdAdmin());
             if(paux.isEmpty()){
                 return administratorsRepository.saveAdministrator(administrators);
             }else

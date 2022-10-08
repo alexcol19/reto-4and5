@@ -9,6 +9,8 @@ import javax.persistence.Table;
 public class Administrators {
 
     @Id
+    private Integer idAdmin;
+
     private String email;
     private String password;
     private String name;
@@ -35,5 +37,13 @@ public class Administrators {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getIdAdmin() {
+        return idAdmin;
+    }
+
+    public void setIdAdmin(Integer idAdmin) {
+        this.idAdmin = idAdmin;
     }
 }
