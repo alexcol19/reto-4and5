@@ -20,12 +20,12 @@ public class ClientController {
 
     @RequestMapping("/all")
     public List<Client> all(){
-        return clientService.getClients();
+        return clientService.getClient();
     }
 
     @GetMapping("/all")
-    public Optional<Client> getClient(@PathVariable("all") int id){
-        return clientService.getIdClient(id);
+    public Optional<Client> getClient(@PathVariable("id") int id){
+        return clientService.getClient(id);
     }
 
     @PostMapping("/save")

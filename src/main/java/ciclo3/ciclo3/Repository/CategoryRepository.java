@@ -1,12 +1,14 @@
 package ciclo3.ciclo3.Repository;
 
 import ciclo3.ciclo3.Repository.CrudRepository.CategoryCrudRepository;
+import ciclo3.ciclo3.entities.Category;
 import ciclo3.ciclo3.entities.Costume;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public class CategoryRepository {
 
     @Autowired
@@ -28,6 +30,4 @@ public class CategoryRepository {
     }
 
 
-    public Category saveCostume(Costume costume) {
-    }
 }

@@ -18,15 +18,15 @@ public class ClientService {
         return clientRepository.getAll();
     }
     public Optional<Client> getClient(int id){
-       return clientRepository.getClient(id);
+       return clientRepository.getClientId(id);
     }
     public Client saveClient(Client client){
         if(client.getIdClient()==null){
-            return clientRepository.save(p);
+            return clientRepository.save(client);
         }else{
             Optional<Client> paux= clientRepository.getClientId(client.getIdClient());
             if(paux.isEmpty()){
-                return clientRepository.saveClient(client);
+                return clientRepository.save(client);
             }else
                 return client;
         }

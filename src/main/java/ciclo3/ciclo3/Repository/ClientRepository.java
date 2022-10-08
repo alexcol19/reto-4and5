@@ -17,10 +17,10 @@ public class ClientRepository {
     public List<Client> getAll(){
         return (List<Client>) clientCrudRepository.findAll();
     }
-    public Optional<Client> getClientId(String id){
+    public Optional<Client> getClientId(Integer id){
         return clientCrudRepository.findById(id);
     }
-    public Client saveAdministrator(Client administrators){
+    public Client save(Client administrators){
         return clientCrudRepository.save(administrators);
     }
     public void deleteAdminstrators(Client administrators){

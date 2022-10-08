@@ -6,16 +6,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 @Entity
-@Table(name = "category")
+@Table(name = "Category")
 public class Category implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String name;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Costume> costume;
+    @Id
+    private Integer id;
+    private String brand;
+    private Integer category;
+    private Integer year;
+    private String name;
+    private String description;
 
     public Integer getId() {
         return id;
@@ -23,6 +23,30 @@ public class Category implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getName() {
@@ -33,14 +57,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public List<Costume> getCostume() {
-        return costume;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCostume(List<Costume> costume) {
-        this.costume = costume;
-    }
-
-    public int getID() {
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

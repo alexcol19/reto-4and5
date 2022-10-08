@@ -1,12 +1,14 @@
 package ciclo3.ciclo3.entities;
 
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
-
+@Repository
 @Entity
-@Table(name = "disfraz")
+@Table(name = "Library")
 public class Library implements Serializable {
 
     @Id
