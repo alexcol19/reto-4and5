@@ -24,12 +24,14 @@ public class CostumeController {
 
     @GetMapping("/{id}")
     public Optional<Costume> getCostumeId(@PathVariable("id") int id){
+
         return costumeService.getCostumeId(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Costume saveCostuume(@RequestBody Costume costume){
+    public Costume saveCostume(@RequestBody Costume costume){
+
         return costumeService.saveCostume(costume);
     }
 }

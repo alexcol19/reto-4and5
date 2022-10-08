@@ -18,12 +18,12 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping("/all")
+    @GetMapping("/all")
     public List<Client> all(){
-        return clientService.getClient();
+        return clientService.getAll();
     }
 
-    @GetMapping("/all")
+    @GetMapping("/{id}")
     public Optional<Client> getClient(@PathVariable("id") int id){
         return clientService.getClient(id);
     }

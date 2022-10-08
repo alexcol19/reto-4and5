@@ -1,15 +1,14 @@
 package ciclo3.ciclo3.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "Client")
 public class Client implements Serializable {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer IdClient;
     private String  email;
     private String  password;

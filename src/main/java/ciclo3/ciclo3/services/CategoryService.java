@@ -2,7 +2,6 @@ package ciclo3.ciclo3.services;
 
 import ciclo3.ciclo3.Repository.CategoryRepository;
 import ciclo3.ciclo3.entities.Category;
-import ciclo3.ciclo3.entities.Costume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +13,8 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<Category> getCostumes(){
-        return categoryRepository.getCategory();
+    public List<Category> getCategory(){
+        return categoryRepository.getAll();
     }
     public Optional<Category> getCategoryId(int id){
         return categoryRepository.getCategory(id);
@@ -24,8 +23,8 @@ public class CategoryService {
         if(category.getId()==null){
             return categoryRepository.save(category);
         }else{
-            Optional<Category> p= categoryRepository.getCategory(category.getId());
-            if(p.isEmpty()){
+            Optional<Category> paux= categoryRepository.getCategory(category.getId());
+            if(paux.isEmpty()){
                 return categoryRepository.save(category);
             }else
                 return category;
