@@ -1,5 +1,7 @@
 package ciclo3.ciclo3.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +19,7 @@ public class Reservations implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    //@JsonIgnoreProperties("reservas")
+    @JsonIgnoreProperties("reservas")
     private Category category;
 
     public Integer getIdReservation() {
