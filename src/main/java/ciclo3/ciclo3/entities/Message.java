@@ -2,9 +2,7 @@ package ciclo3.ciclo3.entities;
 
 import ciclo3.ciclo3.entities.Costume;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,6 +10,7 @@ import java.util.List;
 public class Message {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
     private List<Costume> costume;

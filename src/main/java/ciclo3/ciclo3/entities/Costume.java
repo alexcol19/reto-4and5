@@ -1,8 +1,6 @@
 package ciclo3.ciclo3.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -10,6 +8,7 @@ import java.io.Serializable;
 public class Costume implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ID;
     private String BRAND;
     private Integer CATEGORY;

@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer IdClient;
     private String  email;
     private String  password;

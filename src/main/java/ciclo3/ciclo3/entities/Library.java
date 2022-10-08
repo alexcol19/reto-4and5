@@ -2,9 +2,7 @@ package ciclo3.ciclo3.entities;
 
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 @Repository
 @Entity
@@ -12,6 +10,7 @@ import java.io.Serializable;
 public class Library implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String brand;
     private Integer category;

@@ -11,6 +11,7 @@ import java.util.Date;
 public class Reservations implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     private String client;
     private Date startDate;

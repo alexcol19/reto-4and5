@@ -1,14 +1,13 @@
 package ciclo3.ciclo3.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "administrators")
 public class Administrators {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAdmin;
 
     private String email;
