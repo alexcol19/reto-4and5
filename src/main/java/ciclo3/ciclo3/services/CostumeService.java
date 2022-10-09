@@ -21,10 +21,10 @@ public class CostumeService {
        return costumeRepository.getCostumeId(id);
     }
     public Costume saveCostume(Costume costume){
-        if(costume.getID()==null){
+        if(costume.getId()==null){
             return costumeRepository.saveCostume(costume);
         }else{
-            Optional<Costume> paux= costumeRepository.getCostumeId(costume.getID());
+            Optional<Costume> paux= costumeRepository.getCostumeId(costume.getId());
             if(paux.isEmpty()){
                 return costumeRepository.saveCostume(costume);
             }else
