@@ -3,7 +3,7 @@ package ciclo3.ciclo3.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "administrators")
+@Table(name = "admin")
 public class Administrators {
 
     @Id

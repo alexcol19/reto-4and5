@@ -7,21 +7,30 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservas")
+@Table(name = "reservation")
 public class Reservations implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private String client;
     private Date startDate;
     private Date devolutionDate;
-    private String costume;
+
+    private String status = "created";
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservas")
-    private Category category;
+    @JoinColumn(name = "costumeId")
+    @JsonIgnoreProperties("reservations")
+    private Costume costume;
+
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"reservations", "message"})
+    private Client client;
+
+    @OneToOne
+    @JsonIgnoreProperties("reservation")
+    private Score score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -29,14 +38,6 @@ public class Reservations implements Serializable {
 
     public void setIdReservation(Integer idReservation) {
         this.idReservation = idReservation;
-    }
-
-    public String getClient() {
-        return client;
-    }
-
-    public void setClient(String client) {
-        this.client = client;
     }
 
     public Date getStartDate() {
@@ -55,11 +56,35 @@ public class Reservations implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-    public String getCostume() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Costume getCostume() {
         return costume;
     }
 
-    public void setCostume(String costume) {
+    public void setCostume(Costume costume) {
         this.costume = costume;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
     }
 }

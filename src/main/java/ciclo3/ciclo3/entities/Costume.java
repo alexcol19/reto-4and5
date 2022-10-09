@@ -1,66 +1,96 @@
 package ciclo3.ciclo3.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "disfraz")
+@Table(name = "costume")
 public class Costume implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
-    private String BRAND;
-    private Integer CATEGORY;
-    private Integer YEAR;
-    private String NAME;
-    private String DESCRIPTION;
+    private Integer id;
+    private String name;
+    private String brand;
+    private Integer year;
+    private String description;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    @JsonIgnoreProperties("costumes")
+    private Category category;
 
-    public Integer getID() {
-        return ID;
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
+    @JsonIgnoreProperties({"costumes", "messages"})
+    public List<Reservations> reservations;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
+    @JsonIgnoreProperties({"costume", "client"})
+    public List<Message> messages;
+
+    public Integer getId() {
+        return id;
     }
 
-    public Integer getYEAR() {
-        return YEAR;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setYEAR(Integer YEAR) {
-        this.YEAR = YEAR;
+    public String getName() {
+        return name;
     }
 
-    public String getDESCRIPTION() {
-        return DESCRIPTION;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDESCRIPTION(String DESCRIPTION) {
-        this.DESCRIPTION = DESCRIPTION;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getBRAND() {
-        return BRAND;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setBRAND(String BRAND) {
-        this.BRAND = BRAND;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public String getNAME() {
-        return NAME;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Integer getCATEGORY() {
-        return CATEGORY;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCATEGORY(Integer CATEGORY) {
-        this.CATEGORY = CATEGORY;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public List<Reservations> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservations> reservations) {
+        this.reservations = reservations;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 }
