@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MisionTIC 2022</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="myScript.js"></script>
+<body style="background-color:Aquamarine;">
+
+<center><h1>Disfraces</h1></center>
+
+<div id="listaDisfrazes">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Marca</th> <th>Nombre</th> <th>Año</th> <th>Descripción</th> <th>Opciones</th></tr><tbody id="TbodyDisfraz"></tbody><br>
+</div>
+
+<input type="text" id="marcaDisfraz" placeholder="Marca del disfraz">
+<input type="text" id="nombreDisfraz" placeholder="Nombre del disfraz">
+<input type="number" id="anioDisfraz" placeholder="Año del disfraz"><br>
+<input type="text" id="decripcionDisfraz" placeholder="Descripción del disfraz">
+<input type="number" id="categoryDisfraz" placeholder="Categoria del disfraz"><br>
+
+
+<button onclick="guardarDisfraz()">GUARDAR</button>
+<button onclick="editarDisfraz()">EDITAR</button>
+<button onclick="leerDisfraces()">MOSTRAR</button>
+
+
+
+
+<center><h1>Categorias</h1></center>
+
+<div id="listaCategorias">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr> <th>Nombre</th> <th>Descripción</th> <th>Opciones</th></tr><tbody id="TbodyCategory"></tbody><br>
+</div>
+
+<input type="text" id="nombreDisfrazCategory" placeholder="Nombre del disfraz">
+<input type="text" id="decripcionDisfrazCategory" placeholder="Descripción del disfraz"><br>
+
+
+<button onclick="REVISAR()">GUARDAR</button>
+<button onclick="REVISAR()">EDITAR</button>
+<button onclick="REVISAR()">MOSTRAR</button>
+
+
+
+
+
+<center><h1>Clientes</h1></center>
+
+<div id="listaClientes">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Id</th> <th>Nombre</th> <th>Email</th> <th>Edad</th> <th>Opciones</th></tr><tbody id="Tbodycliente"></tbody>
+</div>
+
+<input type="text" id="nombreCliente" placeholder="Nombre del cliente">
+<input type="text" id="mailCliente" placeholder="Correo del cliente"><br>
+<input type="number" id="edadCliente" placeholder="Edad del cliente">
+<input type="text" id="contraseniaCliente" placeholder="Contraseña del cliente"><br>
+
+<button onclick="guardarCliente()">GUARDAR</button>
+<button onclick="editarCliente()">EDITAR</button>
+<button onclick="leerClientes()">MOSTRAR</button>
+
+
+<center><h1>Mensaje</h1></center>
+
+<div id="listaMensajes">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Mensaje</th> <th>Opciones</th></tr><tbody id="TbodyMessage"></tbody>
+</div>
+
+<input type="number" id="costumeMessage" placeholder="Disfraz">
+<input type="text" id="message" placeholder="Mensaje"><br>
+
+<button onclick="guardarMensaje()">GUARDAR</button>
+<button onclick="editarMensaje()">EDITAR</button>
+<button onclick="leerMensajes()">MOSTRAR</button>
+
+
+
+
+
+<center><h1>Reservas</h1></center>
+
+<div id="listaReservas">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Id</th> <th>Disfraz</th> <th>Calificación</th> <th>Opciones</th></tr><tbody id="Tbodycliente"></tbody>
+</div>
+
+<input type="number" id="costumeReservation" placeholder="Disfraz">
+<input type="number" id="clietnReseration" placeholder="Cliente"><br>
+<input type="date" id="fechaInicio" placeholder="Fecha de Inicio">
+<input type="date" id="fechaEntrega" placeholder="Fecha de Entrega"><br>
+
+<button onclick="guardarCliente()">GUARDAR</button>
+<button onclick="editarCliente()">EDITAR</button>
+<button onclick="leerClientes()">MOSTRAR</button>
+
+<center><h1> Calificación de Reservas</h1></center>
+
+<div id="listaScore">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Id</th> <th>Nombre</th> <th>Email</th> <th>Edad</th> <th>Opcion</th></tr><tbody id="Tbodycliente"></tbody>
+</div>
+
+<input type="number" id="calification" placeholder="Calificación de la Reserva">
+<input type="text" id="messageReservation" placeholder="Mensaje"><br>
+<input type="number" id="Reseration" placeholder="Reserva"><br>
+
+<button onclick="guardarCliente()">GUARDAR</button>
+<button onclick="editarCliente()">EDITAR</button>
+<button onclick="leerClientes()">MOSTRAR</button>
+
+
+
+
+<center><h1>Usuarios Administradores</h1></center>
+
+<div id="listaAdmin">
+    <table border="1", bgcolor = "Turquoise", class="table"><tr><th>Id</th> <th>Nombre</th> <th>Email</th> <th>Opciones</th></tr><tbody id="Tbodycliente"></tbody>
+</div>
+
+<input type="text" id="nombreAdmin" placeholder="Nombre del Usuario Administrador">
+<input type="text" id="mailAdmin" placeholder="Correo del Usuario Administrador">
+<input type="text" id="contraseniaAdmin" placeholder="Contraseña del Usuario"><br>
+
+<button onclick="guardarCliente()">GUARDAR</button>
+<button onclick="editarCliente()">EDITAR</button>
+<button onclick="leerClientes()">MOSTRAR</button>
+
+
+</body>
+</html>
