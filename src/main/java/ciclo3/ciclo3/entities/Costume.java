@@ -24,12 +24,13 @@ public class Costume implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
+    @JsonIgnoreProperties({"costume", "client"})
+    public List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
     @JsonIgnoreProperties({"costumes", "messages"})
     public List<Reservations> reservations;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
-    @JsonIgnoreProperties({"costume", "client"})
-    public List<Message> messages;
 
     public Integer getId() {
         return id;

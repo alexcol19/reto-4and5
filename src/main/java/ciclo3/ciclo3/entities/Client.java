@@ -11,7 +11,7 @@ import java.util.List;
 public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdClient;
+    private Integer idClient;
     private String  email;
     private String  password;
     private String  name;
@@ -27,11 +27,11 @@ public class Client implements Serializable {
     public List<Reservations> reservations;
 
     public Integer getIdClient() {
-        return IdClient;
+        return idClient;
     }
 
     public void setIdClient(Integer idClient) {
-        IdClient = idClient;
+        this.idClient = idClient;
     }
 
     public String getEmail() {
