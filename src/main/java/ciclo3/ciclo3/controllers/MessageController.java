@@ -1,7 +1,7 @@
 package ciclo3.ciclo3.controllers;
 
 import ciclo3.ciclo3.entities.Message;
-import ciclo3.ciclo3.entities.Reservations;
+//import ciclo3.ciclo3.entities.Reservations;
 import ciclo3.ciclo3.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

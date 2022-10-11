@@ -1,10 +1,9 @@
 package ciclo3.ciclo3.entities;
-
-import ciclo3.ciclo3.entities.Costume;
+//import ciclo3.ciclo3.entities.Costume
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.List;
+//import java.util.List.
 
 @Entity
 @Table(name = "message")

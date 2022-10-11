@@ -1,8 +1,8 @@
 package ciclo3.ciclo3.controllers;
 
-import ciclo3.ciclo3.entities.Costume;
+//import ciclo3.ciclo3.entities.Costume;
 import ciclo3.ciclo3.entities.Reservations;
-import ciclo3.ciclo3.services.CostumeService;
+//import ciclo3.ciclo3.services.CostumeService;
 import ciclo3.ciclo3.services.ReservationsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

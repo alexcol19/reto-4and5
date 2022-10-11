@@ -1,6 +1,6 @@
 package ciclo3.ciclo3.controllers;
 
-import ciclo3.ciclo3.entities.Reservations;
+//import ciclo3.ciclo3.entities.Reservations;
 import ciclo3.ciclo3.entities.Score;
 import ciclo3.ciclo3.services.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +13,7 @@ import java.util.Optional;
 @Repository
 @RestController
 @RequestMapping("/api/Score")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class ScoreController {
 
     @Autowired
