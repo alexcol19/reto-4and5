@@ -19,7 +19,7 @@ public class ReservationController {
     @Autowired
     private ReservationsService reservationsService;
 
-    @RequestMapping("/all")
+    @GetMapping("/all")
     public List<Reservations> getReservations(){
         return reservationsService.getReservations();
     }
