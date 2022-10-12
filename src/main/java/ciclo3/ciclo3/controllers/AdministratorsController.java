@@ -35,11 +35,11 @@ public class AdministratorsController {
         return administratorsService.saveAdministrators(administrators);
     }
 
-    /*@PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Administrators update(@RequestBody Administrators administrators){
         return administratorsService.update(administrators);
-    }*/
+    }
 
     /*@DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
