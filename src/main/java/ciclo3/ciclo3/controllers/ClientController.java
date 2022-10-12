@@ -1,5 +1,6 @@
 package ciclo3.ciclo3.controllers;
 
+import ciclo3.ciclo3.entities.Category;
 import ciclo3.ciclo3.entities.Client;
 import ciclo3.ciclo3.entities.Costume;
 import ciclo3.ciclo3.services.ClientService;
@@ -31,6 +32,21 @@ public class ClientController {
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Client saveClient(@RequestBody Client client){
+
         return clientService.saveClient(client);
     }
+
+    /*@PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody Client client){
+        return clientService.update(client); //ojo//
+    }*/
+
+    /*@DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return clientService.deleteClient(id);
+    }*/
+
 }
+

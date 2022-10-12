@@ -23,7 +23,7 @@ public class AdministratorsRepository {
     public Administrators saveAdministrator(Administrators administrators){
         return administratorsCrudRepository.save(administrators);
     }
-    public void deleteAdminstrators(Administrators administrators){
+    public void deleteAdministrators(Administrators administrators){
         administratorsCrudRepository.delete(administrators);
     }
 }

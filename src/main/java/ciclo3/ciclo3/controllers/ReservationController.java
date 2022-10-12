@@ -1,6 +1,7 @@
 package ciclo3.ciclo3.controllers;
 
 //import ciclo3.ciclo3.entities.Costume;
+import ciclo3.ciclo3.entities.Category;
 import ciclo3.ciclo3.entities.Reservations;
 //import ciclo3.ciclo3.services.CostumeService;
 import ciclo3.ciclo3.services.ReservationsService;
@@ -34,4 +35,16 @@ public class ReservationController {
     public Reservations saveReservation(@RequestBody Reservations reservation){
         return reservationsService.saveReservation(reservation);
     }
+
+    /*@PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservations update(@RequestBody Reservations reservations){
+        return reservationsService.update(reservations);
+    }*/
+
+    /*@DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return reservationService.deleteReservation(id);
+    }*/
 }

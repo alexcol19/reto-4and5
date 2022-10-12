@@ -32,4 +32,12 @@ public class AdministratorsService {
                 return administrators;
         }
     }
+
+    /*public boolean deleteAdministrator(int id) {
+        Boolean d = getAdministrator(id).map(administrator -> {
+            administratorRepository.delete(administrator);
+            return true;
+        }).orElse(false);
+        return d;
+    }*/
 }

@@ -23,7 +23,7 @@ public class ClientRepository {
     public Client saveClient(Client client){
         return clientCrudRepository.save(client);
     }
-    public void deleteClietn(Client client){
+    public void deleteClient(Client client){
         clientCrudRepository.delete(client);
     }
 }

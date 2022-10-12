@@ -24,7 +24,7 @@ public class CostumeRepository {
     public Costume saveCostume(Costume costume){
         return costumeCrudRepository.save(costume);
     }
-    public void delteCostume(Costume costume){
+    public void deleteCostume(Costume costume){
         costumeCrudRepository.delete(costume);
     }
 

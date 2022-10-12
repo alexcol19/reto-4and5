@@ -1,5 +1,6 @@
 package ciclo3.ciclo3.controllers;
 
+import ciclo3.ciclo3.entities.Category;
 import ciclo3.ciclo3.entities.Costume;
 import ciclo3.ciclo3.services.CostumeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,16 @@ public class CostumeController {
 
         return costumeService.saveCostume(costume);
     }
+
+    /*@PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Costume update(@RequestBody Category category){
+        return costumeService.update(costume);//ojo//
+    }*/
+
+    /*@DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return costumeService.deleteCostume(id);
+    }*/
 }
