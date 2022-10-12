@@ -25,10 +25,10 @@ public class ReservationController {
         return reservationsService.getReservations();
     }
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public Optional<Reservations> getReservationsId(@PathVariable("id") int id){
         return reservationsService.getReservationId(id);
-    }
+    }*/
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
@@ -36,15 +36,15 @@ public class ReservationController {
         return reservationsService.saveReservation(reservation);
     }
 
-    /*@PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservations update(@RequestBody Reservations reservations){
         return reservationsService.update(reservations);
-    }*/
+    }
 
-    /*@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
-        return reservationService.deleteReservation(id);
-    }*/
+        return reservationsService.deleteReservation(id);
+    }
 }

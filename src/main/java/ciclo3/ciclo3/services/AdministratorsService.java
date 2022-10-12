@@ -33,11 +33,33 @@ public class AdministratorsService {
         }
     }
 
-    /*public boolean deleteAdministrator(int id) {
-        Boolean d = getAdministrator(id).map(administrator -> {
-            administratorRepository.delete(administrator);
+    public Administrators update(Administrators administrators) {
+        if (administrators.getIdAdmin() != null) {
+            Optional<Administrators> e = administratorsRepository.getAdministratorId(administrators.getIdAdmin()); //ojo//
+            if (!e.isEmpty()) {
+                if (administrators.getEmail() != null) {
+                    e.get().setEmail(administrators.getEmail());
+                }
+                if (administrators.getName() != null) {
+                    e.get().setName(administrators.getName());
+                }
+                if (administrators.getPassword() != null) {
+                    e.get().setPassword(administrators.getPassword());
+                }
+                administratorsRepository.saveAdministrator(e.get());
+                return e.get();
+            }else{
+                return administrators;
+            }
+        }else{
+            return administrators;
+        }
+    }
+    public boolean deleteAdministrator(int id) {
+        Boolean d = getAdministratorsId(id).map(administrator -> {
+            administratorsRepository.deleteAdministrators(administrator);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 }

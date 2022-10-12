@@ -38,11 +38,10 @@ public class CategoryController {
         return categoryService.update(category);
     }
 
-
-    /*@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return categoryService.deleteCategory(id);
-    }*/
+    }
 
 }

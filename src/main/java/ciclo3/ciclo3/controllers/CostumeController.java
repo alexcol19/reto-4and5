@@ -36,15 +36,15 @@ public class CostumeController {
         return costumeService.saveCostume(costume);
     }
 
-    /*@PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Costume update(@RequestBody Category category){
+    public Costume update(@RequestBody Costume costume){
         return costumeService.update(costume);//ojo//
-    }*/
+    }
 
-    /*@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return costumeService.deleteCostume(id);
-    }*/
+    }
 }

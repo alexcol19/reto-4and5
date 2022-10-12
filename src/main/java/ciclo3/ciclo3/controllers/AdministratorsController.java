@@ -41,9 +41,9 @@ public class AdministratorsController {
         return administratorsService.update(administrators);
     }
 
-    /*@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
-        return administratorsService.deleteAdministrators(id);
-    }*/
+        return administratorsService.deleteAdministrator(id);
+    }
 }

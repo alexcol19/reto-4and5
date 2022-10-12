@@ -32,9 +32,9 @@ public class CostumeService {
         }
     }
 
-    /*public Costume update(Costume costume) {
+    public Costume update(Costume costume) {
         if (costume.getId() != null) {
-            Optional<Costume> e = costumeRepository.getCostume(costume.getId()); //ojo//
+            Optional<Costume> e = costumeRepository.getCostumeId(costume.getId()); //ojo//
             if (!e.isEmpty()) {
                 if (costume.getName() != null) {
                     e.get().setName(costume.getName());
@@ -51,7 +51,7 @@ public class CostumeService {
                 if (costume.getCategory() != null) {
                     e.get().setCategory(costume.getCategory());
                 }
-                costumeRepository.save(e.get()); //ojo//
+                costumeRepository.saveCostume(e.get()); //ojo//
                 return e.get();
             }else{
                 return costume;
@@ -59,14 +59,14 @@ public class CostumeService {
         }else{
             return costume;
         }
-    }*/
+    }
 
 
-    /*public boolean deleteCostume(int id){
-        Boolean d = getCostume(id).map(costume -> {
-            costumeRepository.delete(costume);
+    public boolean deleteCostume(int id){
+        Boolean d = getCostumeId(id).map(costume -> {
+            costumeRepository.deleteCostume(costume);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 }
