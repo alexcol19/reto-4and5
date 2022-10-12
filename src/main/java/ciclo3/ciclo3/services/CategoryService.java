@@ -51,16 +51,13 @@ public class CategoryService {
     }
 
 
-
-
-
-    /*public boolean deleteCategory(int id) {
-        Boolean d = getCategory(id).map(category -> {
+    public boolean deleteCategory(int id) {
+        Boolean d = getCategoryId(id).map(category -> {
             categoryRepository.delete(category);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 
 
 }

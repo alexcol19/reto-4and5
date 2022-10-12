@@ -34,14 +34,14 @@ public class MessageService {
         }
     }
 
-    /*public Message update(Message message) {
+    public Message update(Message message) {
         if (message.getIdMessage() != null) {
-            Optional<Message> e = messageRepository.getMessages(message.getId());//ojo//
+            Optional<Message> e = messageRepository.getMessageId(message.getIdMessage());//ojo//
             if (!e.isEmpty()) {
                 if (message.getMessageText() != null) {
                     e.get().setMessageText(message.getMessageText());
                 }
-                messageRepository.save(e.get());//ojo//
+                messageRepository.saveMessage(e.get());//ojo//
                 return e.get();
             }else{
                 return message;
@@ -49,13 +49,13 @@ public class MessageService {
         }else{
             return message;
         }
-    }*/
+    }
 
-    /*public boolean deleteMessage(int id){
-        Boolean d = getMessage(id).map(message -> {
-            messageRepository.delete(message);
+    public boolean deleteMessage(int id){
+        Boolean d = getMessageId(id).map(message -> {
+            messageRepository.deleteMessage(message);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 }

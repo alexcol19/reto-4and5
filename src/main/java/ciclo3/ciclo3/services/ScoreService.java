@@ -1,6 +1,7 @@
 package ciclo3.ciclo3.services;
 
 import ciclo3.ciclo3.Repository.ScoreRepository;
+import ciclo3.ciclo3.entities.Message;
 import ciclo3.ciclo3.entities.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,11 +31,31 @@ public class ScoreService {
         }
     }
 
-    /*public boolean deleteScore(int id) {
-        Boolean d = getScore(id).map(score -> {
-            scoreRepository.delete();
+    public Score update(Score score) {
+        if (score.getIdScore() != null) {
+            Optional<Score> e = scoreRepository.getScoreId(score.getIdScore());//ojo//
+            if (!e.isEmpty()) {
+                if (score.getMessageText() != null) {
+                    e.get().setMessageText(score.getMessageText());
+                }
+                if (score.getScore() != null) {
+                    e.get().setScore(score.getScore());
+                }
+                scoreRepository.saveScore(e.get());//ojo//
+                return e.get();
+            }else{
+                return score;
+            }
+        }else{
+            return score;
+        }
+    }
+
+    public boolean deleteScore(int id) {
+        Boolean d = getScoreId(id).map(score -> {
+            scoreRepository.deleteScore(score);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 }

@@ -33,9 +33,9 @@ public class ClientService {
         }
     }
 
-    /*public Client update(Client client) {
+    public Client update(Client client) {
         if (client.getIdClient() != null) {
-            Optional<Client> e = clientRepository.getClient(client.getIdClient()); //ojo//
+            Optional<Client> e = clientRepository.getClientId(client.getIdClient()); //ojo//
             if (!e.isEmpty()) {
                 if (client.getName() != null) {
                     e.get().setName(client.getName());
@@ -46,7 +46,7 @@ public class ClientService {
                 if (client.getPassword() != null) {
                     e.get().setPassword(client.getPassword());
                 }
-                clientRepository.save(e.get()); //ojo//
+                clientRepository.saveClient(e.get()); //ojo//
                 return e.get();
             }else{
                 return client;
@@ -54,13 +54,13 @@ public class ClientService {
         }else{
             return client;
         }
-    }*/
+    }
 
-    /*public boolean deleteClient(int id){
+    public boolean deleteClient(int id){
         Boolean d = getClient(id).map(client -> {
-            clientRepository.delete(client);
+            clientRepository.deleteClient(client);
             return true;
         }).orElse(false);
         return d;
-    }*/
+    }
 }
