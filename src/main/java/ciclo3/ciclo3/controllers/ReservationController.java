@@ -56,7 +56,7 @@ public class ReservationController {
     }
 
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
-    public List<Reservations> getReservationsBeteweenDates(@PathVariable("dateOne") String dateOne, @PathVariable("datTwo") String dateTwo){
+    public List<Reservations> getReservationsBeteweenDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo){
         return reservationsService.getReservationsBetweenDates(dateOne,dateTwo);
     }
 
