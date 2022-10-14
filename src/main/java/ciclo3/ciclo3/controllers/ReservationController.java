@@ -2,6 +2,8 @@ package ciclo3.ciclo3.controllers;
 
 //import ciclo3.ciclo3.entities.Costume;
 import ciclo3.ciclo3.entities.Category;
+import ciclo3.ciclo3.entities.DTOs.CountClient;
+import ciclo3.ciclo3.entities.DTOs.CountStatus;
 import ciclo3.ciclo3.entities.Reservations;
 //import ciclo3.ciclo3.services.CostumeService;
 import ciclo3.ciclo3.services.ReservationsService;
@@ -47,4 +49,25 @@ public class ReservationController {
     public boolean delete(@PathVariable("id") int id){
         return reservationsService.deleteReservation(id);
     }
+    
+    @GetMapping("/report-clents")
+    public List<CountClient> getTopClientes(){
+        return reservationsService.getTopClientes();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservations> getReservationsBeteweenDates(@PathVariable("dateOne") String dateOne, @PathVariable("datTwo") String dateTwo){
+        return reservationsService.getReservationsBetweenDates(dateOne,dateTwo);
+    }
+
+    @GetMapping("/report-status")
+    public CountStatus getReportStatus(){
+        return reservationsService.getReservationsSatus();
+    }
 }
+
+
+
+
+
+

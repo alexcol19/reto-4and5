@@ -26,8 +26,27 @@
     });
 }*/
 
-function tablaDisfraz(){
-    let html=""
+function tablaDisfraz(items){
+    let html="";
+
+    html+="<thead>"
+    html+="<table border="1", bgcolor = "Turquoise", class="table"><tr><th>Marca</th> <th>Nombre</th> <th>Año</th> <th>Descripción</th> <th>Opciones</th></tr>"
+    html+="</thead>"
+
+    htm+="<tbody>"
+    for(let i=0; i < items.length ; i++) {
+        html += "<tr><td><center>"+items[i].brand+"</center></td>";
+        html += "<td><center>"+items[i].name+"</center></td>";
+        html += "<td><center>"+items[i].year+"</center></td>";
+        html += "<td><center>"+items[i].description+"</center></td>";
+        html += "<td><center>"+items[i].category.name+"</center></td>";
+
+        html += "<td><button onclick='borrarDisfraz(" + items[i].id + ")'>Borrar</button></tr>";
+
+        //$("#TbodyDisfraz").append(tableDisfraz);
+    }
+    htm+="<tbody>"
+
 }
 
 

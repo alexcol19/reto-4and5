@@ -3,10 +3,16 @@ package ciclo3.ciclo3.services;
 import ciclo3.ciclo3.Repository.CostumeRepository;
 import ciclo3.ciclo3.Repository.ReservationRepository;
 import ciclo3.ciclo3.entities.Costume;
+import ciclo3.ciclo3.entities.DTOs.CountClient;
+import ciclo3.ciclo3.entities.DTOs.CountStatus;
 import ciclo3.ciclo3.entities.Reservations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,4 +71,35 @@ public class ReservationsService {
         }).orElse(false);
         return d;
     }
+
+    //RETO 5
+
+    public List<CountClient> getTopClientes(){
+        return reservationRepository.getTopClientes();
+    }
+    
+    public List<Reservations> getReservationsBetweenDates(String dateA,String dateB){
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-mm-dd");
+        Date a = new Date();
+        Date b = new Date();
+        try{
+            a = parser.parse(dateA);
+            b = parser.parse(dateB);
+        }catch (ParseException error){
+            error.printStackTrace();
+        }
+        if(a.before(b)){
+            return reservationRepository.getReservationsBetweenDates(a, b);
+        }else{
+            return new ArrayList<>();
+        }
+    }
+
+    public CountStatus getReservationsSatus(){
+        List<Reservations> reservasCompletadas = reservationRepository.getReservationsByStatus("completed");
+        List<Reservations> reservasCanceladas = reservationRepository.getReservationsByStatus("canceladas");
+
+        return new CountStatus((long) reservasCompletadas.size(), (long) reservasCanceladas.size());
+    }
+
 }
