@@ -79,7 +79,7 @@ public class ReservationsService {
     }
     
     public List<Reservations> getReservationsBetweenDates(String dateA,String dateB){
-        SimpleDateFormat parser = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
         Date a = new Date();
         Date b = new Date();
         try{
@@ -97,7 +97,7 @@ public class ReservationsService {
 
     public CountStatus getReservationsSatus(){
         List<Reservations> reservasCompletadas = reservationRepository.getReservationsByStatus("completed");
-        List<Reservations> reservasCanceladas = reservationRepository.getReservationsByStatus("canceladas");
+        List<Reservations> reservasCanceladas = reservationRepository.getReservationsByStatus("cancelled");
 
         return new CountStatus((long) reservasCompletadas.size(), (long) reservasCanceladas.size());
     }

@@ -50,7 +50,7 @@ public class ReservationController {
         return reservationsService.deleteReservation(id);
     }
     
-    @GetMapping("/report-clents")
+    @GetMapping("/report-clients")
     public List<CountClient> getTopClientes(){
         return reservationsService.getTopClientes();
     }

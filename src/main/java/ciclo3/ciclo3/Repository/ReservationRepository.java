@@ -44,7 +44,7 @@ public class ReservationRepository {
     }
 
     public List<Reservations> getReservationsBetweenDates(Date a,Date b){
-        return reservationsCrudRepository.findAllByStartDateAndDevolutionDateBefore(a, b);
+        return reservationsCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(a, b);
     }
 
     public List<Reservations> getReservationsByStatus(String status){
