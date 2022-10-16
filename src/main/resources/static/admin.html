@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <title>Mundo Disfraces</title> 
+</head>
+<body onload="traerAdmins()">
+    <div class="bg-imagen"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img(11).webp');
+           height: -140vh">
+        <div style="width: 80%; text-align: center; margin: auto; padding: 2%;">
+            <div class="fs-2">
+                <h1 class="display-2 fw-bold">Administradores</h1><br>
+                <div style="width: 40%; text-align: center; margin: auto;">
+
+                    <table id="tablaAdmins" class="table table-bordered border-dark">       
+                        
+                    </table>
+                </div>
+
+                <h4 class="fs-2 fw-bold">Registrar Administrador</h4>
+                <div style="width: 20%; text-align: center; margin: auto; padding: 2%;">
+                    <form>
+                        <input class="form-control" id="nombre" placeholder="Nombre del administrador"/><br><br>
+                        <input class="form-control" id="email" placeholder="Correo del administrador"/><br><br>
+                        <input class="form-control" id="password" type="password" placeholder="Clave del administrador"/><br><br>
+
+                    </form>
+
+                    <button class="btn btn-success btn-lg" onclick="guardarAdmin()">Guardar Admin</button><button class="btn btn-success btn-lg" onclick="document.location.href='index.html'">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
